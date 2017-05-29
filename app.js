@@ -14,9 +14,14 @@ function playSound(){
         isPlaying=false;
     }
 };
+    
+    $('#play').bind('click',function(){
+        playSound();
+    });
+
 
 $('document').ready(function(){
-    $('play').bind('onclick',function(){
+    $('#play').bind('click',function(){
         playSound();
     });
 });
