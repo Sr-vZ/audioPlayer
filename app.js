@@ -12,16 +12,13 @@ function playSound(){
     }else{
         sound.pause();
         isPlaying=false;
+        //$('#play-icon').toggleClass('glyphicon glyphicon-pause');
     }
 };
     
-    $('#play').bind('click',function(){
-        playSound();
-    });
-
-
 $('document').ready(function(){
     $('#play').bind('click',function(){
+        $('#play-icon').toggleClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
         playSound();
     });
 });
