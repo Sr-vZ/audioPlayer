@@ -1,38 +1,42 @@
-
 var sound = new Howl({
-  src: ['https://dl.pagal.link/upload_file/5570/6757/Latest Bollywood Hindi Mp3 Songs - 2017/Sachin A Billion Dreams %282017%29 Hindi Mp3 Songs/01 Hind Mere Jind - Sachin %28AR Rahman%29 320Kbps.mp3']
+    src: ['http://www.sample-videos.com/audio/mp3/wave.mp3']
 });
-var isPlaying=false;
+var isPlaying = false;
 
-function playSound(){
+var refreshSeek;
+
+function playSound() {
     var playEle = document.getElementById('play');
-    if(isPlaying==false){
+    if (isPlaying == false) {
         sound.play();
-        isPlaying=true;
-        setInterval(seekBar,1000) ;
+        isPlaying = true;
+        refreshSeek = setInterval(seekBar, 1000);
         //$('#duration').innerHtml=sound.duration();
-    }else{
+    } else {
         sound.pause();
-        isPlaying=false;
+        isPlaying = false;
         //$('#play-icon').toggleClass('glyphicon glyphicon-pause');
+        clearInterval(refreshSeek);
     }
 };
-function seekBar(){
-    if(sound.isPlaying){
+
+function seekBar() {
+    if (sound.isPlaying) {
         //$("#progress_bar").val(sound.seek()/sound.duration());
-        $("#progress_bar").css('width',(sound.seek()/sound.duration())*1000);
+        $("#progress_bar").css('width', (sound.seek() / sound.duration()) * 1000);
     }
-    $("#progress_bar").css('width',(sound.seek()/sound.duration())*1000);
-    console.log(sound.seek()/sound.duration());    
+    $("#progress_bar").css('width', (sound.seek() / sound.duration()) * 1000);
+    console.log(sound.seek() / sound.duration());
 }
-function updateAnimations(){
+
+function updateAnimations() {
     seekBar();
-  } 
-  
-$('document').ready(function(){
-    $('#play').bind('click',function(){
+}
+
+$('document').ready(function() {
+    $('#play').bind('click', function() {
         $('#play-icon').toggleClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
         playSound();
-        
+
     });
 });
