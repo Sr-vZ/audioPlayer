@@ -28,7 +28,7 @@ function playSound() {
 
 function seekBar() {
 
-    $("#progress_bar").css('width', (sound.seek() / sound.duration()) * 1000);
+    $("#progress_bar").css('width', (sound.seek() / sound.duration()) * 100);
     //console.log(sound.seek() / sound.duration());
 
 }
