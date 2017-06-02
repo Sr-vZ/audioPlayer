@@ -1,5 +1,7 @@
+
 var sound = new Howl({
-    src: ['https://dl.jatt.link/cdn8.jatt.link/3122b80a37cc9a39ae80e8011d437074/vaezv/Baarish-(Mr-Jatt.com).mp3']
+    src: ['./media/Hind Mere Jind.mp3'],
+    html5: true,
 });
 var isPlaying = false;
 
@@ -7,7 +9,7 @@ var refreshSeek;
 
 function playSound() {
     var playEle = document.getElementById('play');
-    if (isPlaying === false) {
+    if (isPlaying == false) {
         sound.play();
         isPlaying = true;
         refreshSeek = setInterval(seekBar, 1000);
@@ -18,7 +20,7 @@ function playSound() {
         //$('#play-icon').toggleClass('glyphicon glyphicon-pause');
         clearInterval(refreshSeek);
     }
-};
+}
 
 
 function seekBar() {
@@ -39,3 +41,4 @@ $(document).ready(function() {
 
     });
 });
+
