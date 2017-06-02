@@ -9,17 +9,20 @@ var refreshSeek;
 
 function playSound() {
     var playEle = document.getElementById('play');
-    if (isPlaying == false) {
+    if (sound.playing() === false) {
         sound.play();
-        isPlaying = true;
+        //isPlaying = true;
+        $('#play-icon').toggleClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
         refreshSeek = setInterval(seekBar, 1000);
         //$('#duration').innerHtml=sound.duration();
     } else {
         sound.pause();
-        isPlaying = false;
+        //isPlaying = false;
         //$('#play-icon').toggleClass('glyphicon glyphicon-pause');
+        $('#play-icon').toggleClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
         clearInterval(refreshSeek);
     }
+    
 }
 
 
@@ -36,9 +39,9 @@ function updateAnimations() {
 
 $(document).ready(function() {
     $('#play').bind('click', function() {
-        $('#play-icon').toggleClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
         playSound();
 
     });
+    
 });
 
