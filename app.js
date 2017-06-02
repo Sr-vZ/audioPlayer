@@ -23,7 +23,7 @@ function seekBar(){
         $("#progress_bar").css('width',(sound.seek()/sound.duration())*1000);
     }
     $("#progress_bar").css('width',(sound.seek()/sound.duration())*1000);
-    console.log(sound.seek()/sound.duration());    
+    //console.log(sound.seek()/sound.duration());    
 }
 function updateAnimations(){
     seekBar();
