@@ -40,8 +40,8 @@ function updateAnimations() {
 $(document).ready(function() {
     $('#play').bind('click', function() {
         playSound();
-
+        //visualize();
     });
-    
+    visualize();
 });
 
