@@ -1,7 +1,7 @@
 
 var sound = new Howl({
     src: ['./media/Hind Mere Jind.mp3'],
-    html5: true,
+    html5: false,
 });
 var isPlaying = false;
 
@@ -42,6 +42,6 @@ $(document).ready(function() {
         playSound();
         //visualize();
     });
-    visualize();
+    //visualize();
 });
 
