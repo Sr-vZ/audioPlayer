@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <script>window.$ = window.jQuery = require('jquery');</script>
+    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -20,12 +21,14 @@
 
 
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="visualize.js"></script>
     <title>SrvZ Audio Player</title>
 </head>
 
 <body>
     <div id="container">
         <div id="ui">
+            <audio id="audioElement"></audio>
             <div id="viz">
                 <canvas id="visualizer" width="640" height="100"></canvas>
             </div>
