@@ -42,6 +42,6 @@ $(document).ready(function() {
         playSound();
         //visualize();
     });
-    //visualize();
+    visualize();
 });
 
