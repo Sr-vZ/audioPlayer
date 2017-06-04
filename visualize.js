@@ -67,4 +67,13 @@ function visualize(){
 
   // Run the loop
   renderChart();
+  var ctx = document.getElementById("visualizer");
+  var myBarChart = new Chart(ctx, {
+    type: 'bar',
+    data: frequencyData,
+    options: options
+  });
+  function drawViz(){
+    myBarChart.data = frequencyData;
+  }
 }
