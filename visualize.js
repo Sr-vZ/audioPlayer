@@ -66,14 +66,41 @@ function visualize(){
   }
 
   // Run the loop
-  renderChart();
+  //renderChart();
+    var labelData = new Array(256);
+    
+    var data = {
+      labels:labelData,
+      datasets : [
+          {
+                fillColor : "rgba(220,220,220,0.5)",
+                strokeColor : "rgba(220,220,220,1)",
+                pointColor : "rgba(220,220,220,1)",
+                pointStrokeColor : "#fff",
+                data : frequencyData
+            }
+            ]
+    }
   var ctx = document.getElementById("visualizer");
   var myBarChart = new Chart(ctx, {
     type: 'bar',
-    data: frequencyData,
-    options: options
+    data: data
+    //options: options
   });
+  function addData(chart, data) {
+    //chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
+    });
+    chart.update();
+}
   function drawViz(){
-    myBarChart.data = frequencyData;
+    //myBarChart.data.datasets.data.push(frequencyData);
+    analyser.getByteFrequencyData(frequencyData);
+    //addData(myBarChart,frequencyData);
+    //myBarChart.data.datasets.data.push(frequencyData);
+    myBarChart.update();
+    requestAnimationFrame(drawViz);
   }
+  drawViz();
 }
