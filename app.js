@@ -3,6 +3,7 @@ var sound = new Howl({
     src: ['./media/Hind Mere Jind.mp3'],
     html5: false,
 });
+/*
 var isPlaying = false;
 
 var refreshSeek;
@@ -36,7 +37,11 @@ function seekBar() {
 function updateAnimations() {
     seekBar();
 }
-
+*/
+//var myAudio = new Audio('./media/Hind Mere Jind.mp3');
+function playSound(){
+    $('#audioElement').trigger('play');
+}
 $(document).ready(function() {
     $('#play').bind('click', function() {
         playSound();
