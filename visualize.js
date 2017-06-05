@@ -12,7 +12,7 @@ function visualize(){
 
 // Connect the analyser -> destination
 //analyser.connect(Howler.ctx.destination);
-
+analyser.fftSize = 128;
   // Bind our analyser to the media element source.
   audioSrc.connect(analyser);
   audioSrc.connect(audioCtx.destination);
@@ -67,25 +67,48 @@ function visualize(){
 
   // Run the loop
   //renderChart();
-    var labelData = new Array(256);
+    var labelData = new Array(32);
     
     var data = {
       labels:labelData,
       datasets : [
           {
-                fillColor : "rgba(220,220,220,0.5)",
-                strokeColor : "rgba(220,220,220,1)",
-                pointColor : "rgba(220,220,220,1)",
+                fillColor : "rgba(255,0,0,0.5)",
+                strokeColor : "rgba(255,0,0,1)",
+                pointColor : "rgba(255,0,0,1)",
                 pointStrokeColor : "#fff",
+                backgroundColor:"rgba(255,0,0,0.5)",
                 data : frequencyData
             }
             ]
     }
+  var options = {
+    legend: {
+            display: false
+         },
+    tooltips: {
+            enabled: false
+         },
+    scales: {
+    xAxes: [{
+                display: false,
+                gridLines: {
+                    display:false
+                }
+            }],
+    yAxes: [{
+                display: false,
+                gridLines: {
+                    display:false
+                }   
+            }]
+    }
+  }
   var ctx = document.getElementById("visualizer");
   var myBarChart = new Chart(ctx, {
     type: 'bar',
-    data: data
-    //options: options
+    data: data,
+    options: options
   });
   function addData(chart, data) {
     //chart.data.labels.push(label);
@@ -94,9 +117,11 @@ function visualize(){
     });
     chart.update();
 }
+  Chart.defaults.global.tooltips.enabled = false;
   function drawViz(){
     //myBarChart.data.datasets.data.push(frequencyData);
     analyser.getByteFrequencyData(frequencyData);
+    //analyser.getByteTimeDomainData(frequencyData);
     //addData(myBarChart,frequencyData);
     //myBarChart.data.datasets.data.push(frequencyData);
     myBarChart.update();
