@@ -39,8 +39,16 @@ function updateAnimations() {
 }
 */
 //var myAudio = new Audio('./media/Hind Mere Jind.mp3');
+isPlaying = false;
 function playSound(){
-    $('#audioElement').trigger('play');
+    if(isPlaying===false){
+        $('#audioElement').trigger('play');
+        isPlaying=true;
+    }
+    else{
+        $('#audioElement').trigger('pause');
+        isPlaying=false;
+    }
 }
 $(document).ready(function() {
     $('#play').bind('click', function() {
