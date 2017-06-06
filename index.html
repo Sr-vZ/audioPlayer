@@ -28,6 +28,7 @@
 
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="visualize.js"></script>
+    <link rel="stylesheet" href="ui.css"
     <title>SrvZ Audio Player</title>
 </head>
 
@@ -42,8 +43,14 @@
                 <div id="progress_bar" class="progress-bar bg-info" role="progressbar" style="width:0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <p id="duration"></p>
+            <button id="back" type="button " class="btn btn-primary btn-circle btn-lg">
+                    <span id="play-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+                </button>
             <button id="play" type="button " class="btn btn-primary btn-circle btn-xl">
-                    <span id="play-icon" class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span> Play
+                    <span id="play-icon" class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span>
+                </button>
+            <button id="forward" type="button " class="btn btn-primary btn-circle btn-lg">
+                    <span id="play-icon" class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
                 </button>
         </div>
     </div>
