@@ -38,7 +38,7 @@
         <div id="ui">
             <audio id="audioElement" src="./media/Baarish.mp3" controls="true"></audio>
                 <div >
-                    <img id="album-art">
+                    <img id="album-art" width="200" height="200">
                 </div>
             <div id="viz">
                 <canvas id="visualizer" width="400" height="200"></canvas>
@@ -49,13 +49,13 @@
             <p id="duration"></p>
             <div>
             <button id="back" type="button " class="btn btn-primary btn-circle btn-lg">
-                    <span id="play-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+                    <span id="back-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
                 </button>
             <button id="play" type="button " class="btn btn-primary btn-circle btn-xl">
                     <span id="play-icon" class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span>
                 </button>
             <button id="forward" type="button " class="btn btn-primary btn-circle btn-lg">
-                    <span id="play-icon" class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
+                    <span id="forward-icon" class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
                 </button>
                 </div>
                 <div class="panel panel-default">
@@ -63,7 +63,7 @@
   <div class="panel-heading">Playlist</div>
 
   <!-- Table -->
-  <table class="table">
+  <table id="playlist" class="table">
     ...
   </table>
 </div>
