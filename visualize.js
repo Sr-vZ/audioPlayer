@@ -67,12 +67,12 @@ analyser.fftSize = 128;
 
   // Run the loop
   //renderChart();
-    var labelData = new Array(32);
-    
-    var data = {
-      labels:labelData,
-      datasets : [
-          {
+      var labelData = new Array(32);
+      
+      var data = {
+        labels:labelData,
+        datasets : [
+            {
                 fillColor : "rgba(255,0,0,0.5)",
                 strokeColor : "rgba(255,0,0,1)",
                 pointColor : "rgba(255,0,0,1)",

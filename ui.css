@@ -23,3 +23,12 @@
   line-height: 1.33;
   border-radius: 35px;
 }
+.progress {height: 10px;}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+}
+
+.img-wrapper {
+   width: 80%;
+}

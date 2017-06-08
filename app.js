@@ -40,17 +40,37 @@ function updateAnimations() {
 */
 //var myAudio = new Audio('./media/Hind Mere Jind.mp3');
 isPlaying = false;
+hasEnded = false;
+
+
+$('#audioElement').on("timeupdate", function(){
+    var currentTime = $('#audioElement').currentTime;
+    var duration = $('#audioElement').duration;
+    console.log(currentTime,duration);
+    
+});
+
+$('#audioElement').on('ended',function(){
+    togglePlayicon();
+});
 function playSound(){
-    if(isPlaying===false){
+    if(isPlaying===false){  
         $('#audioElement').trigger('play');
+        togglePlayicon();
         isPlaying=true;
     }
     else{
         $('#audioElement').trigger('pause');
+        togglePlayicon();
         isPlaying=false;
     }
 }
+
+function togglePlayicon(){
+        $('#play-icon').toggleClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
+}
 $(document).ready(function() {
+    
     $('#play').bind('click', function() {
         playSound();
         //visualize();

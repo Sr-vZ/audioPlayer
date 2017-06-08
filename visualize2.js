@@ -1,73 +1,70 @@
-function visualize(){
+function visualize2(){
 var analyser = Howler.ctx.createAnalyser();
 Howler.masterGain.connect(analyser);
 analyser.connect(Howler.ctx.destination);
 var bufferLength = analyser.frequencyBinCount;
-var dataArray = new Uint8Array(bufferLength);
-analyser.getByteTimeDomainData(dataArray);
-var WIDTH = 800,
-    HEIGHT = 300;
+var frequencyData = new Uint8Array(bufferLength);
+analyser.getByteTimeDomainData(frequencyData);
 
-
-// Get a canvas defined with ID "oscilloscope"
-var canvas = document.getElementById("visualizer");
-var canvasCtx = canvas.getContext("2d");
-canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
-// draw an oscilloscope of the current audio source
-
-function draw() {
-/*
-  drawVisual = requestAnimationFrame(draw);
-
-  analyser.getByteTimeDomainData(dataArray);
-
-  canvasCtx.fillStyle = 'rgb(200, 200, 200)';
-  canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
-
-  canvasCtx.lineWidth = 2;
-  canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
-
-  canvasCtx.beginPath();
-
-  var sliceWidth = canvas.width * 1.0 / bufferLength;
-  var x = 0;
-
-  for (var i = 0; i < bufferLength; i++) {
-
-    var v = dataArray[i] / 128.0;
-    var y = v * canvas.height / 2;
-
-    if (i === 0) {
-      canvasCtx.moveTo(x, y);
-    } else {
-      canvasCtx.lineTo(x, y);
-    }
-
-    x += sliceWidth;
-  }
-
-  canvasCtx.lineTo(canvas.width, canvas.height / 2);
-  canvasCtx.stroke();
-  */
+      var labelData = new Array(32);
       
-      drawVisual = requestAnimationFrame(draw);
-
-      analyser.getByteFrequencyData(dataArray);
-      //console.log(dataArray);
-      canvasCtx.fillStyle = 'rgb(0, 0, 0)';
-      canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
-      var barWidth = (WIDTH / bufferLength) * 2.5;
-      var barHeight;
-      var x = 0;
-      for(var i = 0; i < bufferLength; i++) {
-        barHeight = dataArray[i]/2;
-
-        canvasCtx.fillStyle = 'rgb(' + (barHeight+100) + ',50,50)';
-        canvasCtx.fillRect(x,HEIGHT-barHeight/2,barWidth,barHeight);
-
-        x += barWidth + 1;
-      }
-};
-
-draw();
+      var data = {
+        labels:labelData,
+        datasets : [
+            {
+                fillColor : "rgba(255,0,0,0.5)",
+                strokeColor : "rgba(255,0,0,1)",
+                pointColor : "rgba(255,0,0,1)",
+                pointStrokeColor : "#fff",
+                backgroundColor:"rgba(255,0,0,0.5)",
+                data : frequencyData
+            }
+            ]
+    }
+  var options = {
+    legend: {
+            display: false
+         },
+    tooltips: {
+            enabled: false
+         },
+    scales: {
+    xAxes: [{
+                display: false,
+                gridLines: {
+                    display:false
+                }
+            }],
+    yAxes: [{
+                display: false,
+                gridLines: {
+                    display:false
+                }   
+            }]
+    }
+  }
+  var ctx = document.getElementById("visualizer");
+  var myBarChart = new Chart(ctx, {
+    type: 'bar',
+    data: data,
+    options: options
+  });
+  function addData(chart, data) {
+    //chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
+    });
+    chart.update();
+}
+  Chart.defaults.global.tooltips.enabled = false;
+  function drawViz(){
+    //myBarChart.data.datasets.data.push(frequencyData);
+    analyser.getByteFrequencyData(frequencyData);
+    //analyser.getByteTimeDomainData(frequencyData);
+    //addData(myBarChart,frequencyData);
+    //myBarChart.data.datasets.data.push(frequencyData);
+    myBarChart.update();
+    requestAnimationFrame(drawViz);
+  }
+  drawViz();
 }

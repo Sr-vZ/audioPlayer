@@ -26,36 +26,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.3/howler.min.js"></script>
     
 
-    <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="visualize.js"></script>
+    <!--<script type="text/javascript" src="app.js"></script>-->
+    <script type="text/javascript" src="player.js"></script>
+    <script type="text/javascript" src="visualize2.js"></script>
     <script type="text/javascript" src="mediaTag.js"></script>
     <link rel="stylesheet" href="ui.css"
     <title>SrvZ Audio Player</title>
 </head>
 
 <body>
-    <div id="container">
+    <div id="container-fluid">
+        <div class="row">
+            <div class="col-lg-1 col-centered">
         <div id="ui">
-            <audio id="audioElement" src="./media/Baarish.mp3" controls="true"></audio>
-                <div >
-                    <img id="album-art">
+            <!--<audio id="audioElement" src="./media/Baarish.mp3" controls="true"></audio>-->
+                <div id="img-wrapper" >
+                    <img id="album-art" class="img-responsive">
                 </div>
             <div id="viz">
-                <canvas id="visualizer" width="400" height="200"></canvas>
+                <canvas id="visualizer"></canvas>
             </div>
-            <div class="progress">
+            <div class="progress progress-striped active">
                 <div id="progress_bar" class="progress-bar bg-info" role="progressbar" style="width:0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <p id="duration"></p>
             <div>
             <button id="back" type="button " class="btn btn-primary btn-circle btn-lg">
-                    <span id="play-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+                    <span id="back-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
                 </button>
             <button id="play" type="button " class="btn btn-primary btn-circle btn-xl">
                     <span id="play-icon" class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span>
                 </button>
             <button id="forward" type="button " class="btn btn-primary btn-circle btn-lg">
-                    <span id="play-icon" class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
+                    <span id="forward-icon" class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
                 </button>
                 </div>
                 <div class="panel panel-default">
@@ -63,10 +66,13 @@
   <div class="panel-heading">Playlist</div>
 
   <!-- Table -->
-  <table id ="playlist" class="table">
+
+  <table id="playlist" class="table">
     ...
   </table>
 </div>
+        </div>
+        </div>
         </div>
     </div>
 </body>
