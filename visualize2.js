@@ -1,8 +1,9 @@
 function visualize2(){
+
 var analyser = Howler.ctx.createAnalyser();
 Howler.masterGain.connect(analyser);
 analyser.connect(Howler.ctx.destination);
-var bufferLength = analyser.frequencyBinCount;
+var bufferLength = 128; //analyser.frequencyBinCount;
 var frequencyData = new Uint8Array(bufferLength);
 analyser.getByteTimeDomainData(frequencyData);
 

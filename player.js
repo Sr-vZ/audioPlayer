@@ -27,12 +27,23 @@ function playSound() {
 
 
 function seekBar() {
-
     $("#progress_bar").css('width', (sound.seek() / sound.duration()) * 100);
     //console.log(sound.seek() / sound.duration());
-
 }
 
+function popPlaylist(){
+    var contents ='';
+    getFiles("./media",function(){
+        console.log(fileList);
+        for(i=0;i<fileList.length;i++){
+            contents ="<tr><td>"+fileList[i]+"</td></tr>";
+            $('#playlist>tbody').append(contents);   
+        }
+        $('#playlist>tbody').append(contents);
+        console.log(contents);
+    });   
+    //console.log(fileList);
+}
 function updateAnimations() {
     seekBar();
 }
@@ -46,5 +57,6 @@ $(document).ready(function() {
         playSound();
         //visualize();
     });
+    popPlaylist();
     visualize2();
 });
