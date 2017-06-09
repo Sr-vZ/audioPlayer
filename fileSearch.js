@@ -21,7 +21,9 @@ fs.readdir(dir, function(err, files) {
    files.forEach(function(f) {
       //console.log(f);
       fileList.push(f);
+      
     });
-});
     callback();
+});
+    
 }

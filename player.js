@@ -77,6 +77,6 @@ $(document).ready(function() {
         //visualize();
     });
     seekPlay();
-    popPlaylist();
+    setInterval(popPlaylist(),1000);
     visualize2();
 });
