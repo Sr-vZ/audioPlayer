@@ -3,7 +3,7 @@ var jsmediatags = require("jsmediatags");
  
 jsmediatags.read("./media/Hind Mere Jind.mp3", {
   onSuccess: function(tag) {
-    console.log(tag);
+    //console.log(tag);
     albumArt(tag.tags);
   },
   onError: function(error) {

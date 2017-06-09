@@ -29,6 +29,34 @@
    outline: none !important;
 }
 
+.col-centered{
+float: none;
+margin: 0 auto;
+}
+
 .img-wrapper {
    width: 80%;
+}
+
+#custom-seekbar
+{  
+  cursor: pointer;
+  height: 10px;
+  margin-bottom: 10px;
+  /*outline: thin solid orange;*/
+  overflow: hidden;
+  position: relative;
+  width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #337ab7;
+}
+#custom-seekbar span
+{
+  background-color: #337ab7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 0px;
+  border-radius: 5px
 }

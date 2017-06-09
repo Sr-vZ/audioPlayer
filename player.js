@@ -13,6 +13,7 @@ function playSound() {
         sound.play();
         //isPlaying = true;
         $('#play-icon').toggleClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
+        $('#duration').html=sound.duration();
         refreshSeek = setInterval(seekBar, 1000);
         //$('#duration').innerHtml=sound.duration();
     } else {
@@ -27,8 +28,10 @@ function playSound() {
 
 
 function seekBar() {
-    $("#progress_bar").css('width', (sound.seek() / sound.duration()) * 100);
+    //$("#progress_bar").css('width', (sound.seek() / sound.duration()) * 100);
     //console.log(sound.seek() / sound.duration());
+    var percentage = ( sound.seek() / sound.duration() ) * 100;
+    $("#custom-seekbar span").css("width", percentage+"%");
 }
 
 function popPlaylist(){
@@ -39,7 +42,7 @@ function popPlaylist(){
             contents ="<tr><td>"+fileList[i]+"</td></tr>";
             $('#playlist>tbody').append(contents);   
         }
-        $('#playlist>tbody').append(contents);
+        //$('#playlist').append(contents);
         console.log(contents);
     });   
     //console.log(fileList);
@@ -48,6 +51,18 @@ function updateAnimations() {
     seekBar();
 }
 
+var vid = sound;
+function seekPlay(){
+$("#custom-seekbar").on("click", function(e){
+    var offset = $(this).offset();
+    var left = (e.pageX - offset.left);
+    var totalWidth = $("#custom-seekbar").width();
+    var percentage = ( left / totalWidth );
+    var vidTime = sound.duration() * percentage;
+    console.log(vidTime);
+    sound.seek(vidTime);// = vidTime;
+});//click()
+}
 function togglePlayicon(){
         $('#play-icon').toggleClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
 }
@@ -57,6 +72,7 @@ $(document).ready(function() {
         playSound();
         //visualize();
     });
+    seekPlay();
     popPlaylist();
     visualize2();
 });
