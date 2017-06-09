@@ -11,6 +11,7 @@
         var d3 = require('d3'),
         jsdom =require('jsdom'),
         Chart = require('chart.js'),
+        moment = require('moment'),
         jsmediatags = require("jsmediatags");
     </script>
     
@@ -56,7 +57,7 @@
             <div id="custom-seekbar">
                 <span></span>
             </div>
-            <p id="duration"></p>
+            <p id="duration">0:00</p>
             <div>
             <button id="back" type="button " class="btn btn-primary btn-circle btn-lg">
                     <span id="back-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>

@@ -22,6 +22,7 @@
     "howler": "^2.0.3",
     "jquery": "^3.2.1",
     "jsdom": "^11.0.0",
-    "jsmediatags": "^3.5.0"
+    "jsmediatags": "^3.5.0",
+    "moment": "^2.18.1"
   }
 }
