@@ -1,8 +1,9 @@
 var sound = new Howl({
     src: ['./media/Hind Mere Jind.mp3'],
     html5: false,
-    //onend: function(){togglePlayicon();},
-    onstop: function(){togglePlayicon();},
+    onplay: function(){togglePlayicon();},
+    onend: function(){togglePlayicon();},
+    //onstop: function(){togglePlayicon();},
     });
 
 var isPlaying = false;
@@ -44,7 +45,17 @@ function seekBar() {
     $('#pos').html(formatDuration(sound.seek()));
     
 }
+function playlistClick(event){
+      var target = $(event.target);
+      $td = target.closest('td');
+      
+      $td.html(parseInt($td.html())+1);
+      var col   = $td.index();
+      var row   = $td.closest('tr').index();
+      console.log($td);
+    
 
+}
 function popPlaylist(){
     var contents ='';
     getFiles("./media",function(){
@@ -82,6 +93,16 @@ $(document).ready(function() {
     $('#play').bind('click', function() {
         playSound();
         //visualize();
+    });
+    $('#playlist').click( function(event) {
+      var target = $(event.target);
+      $td = target.closest('td');
+      //console.log($td.text());
+      sound.stop();
+      sound=new Howl({
+          src:fileLoc[fileList.indexOf($td.text())],
+      });
+      playSound();
     });
     seekPlay();
     setInterval(popPlaylist(),1000);

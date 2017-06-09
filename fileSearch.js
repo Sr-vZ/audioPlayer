@@ -1,6 +1,7 @@
 var fs = require('fs');
 var dir;
 var fileList=[];
+var fileLoc=[];
 //If argument is missing, use current directory
 function getFiles(dir,callback){
     fileList=[];
@@ -21,7 +22,7 @@ fs.readdir(dir, function(err, files) {
    files.forEach(function(f) {
       //console.log(f);
       fileList.push(f);
-      
+      fileLoc.push(dir+"/"+f);
     });
     callback();
 });
