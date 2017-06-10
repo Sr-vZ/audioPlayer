@@ -65,7 +65,7 @@ margin: 0 auto;
 #viz
 {
   position: absolute;
-  top: 200px;
+  top: 180px;
   width: 90%;
   align-content: center;
   z-index: 5;
@@ -74,7 +74,17 @@ margin: 0 auto;
 {
   position: relative;
   z-index: 0;
-  width:90%;
+  width:50%;
   text-align: center;
-  height: 50%
+  height: 50%;
+  opacity: 0.5;
+  padding: 5%;
+}
+#button-group
+{
+  align-content: center;
+}
+body
+{
+  background: linear-gradient(to bottom,#F1F2B5,#135058) 
 }

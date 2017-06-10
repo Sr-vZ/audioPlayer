@@ -1,4 +1,5 @@
 var sound = new Howl({
+    //src: fileLoc,
     src: ['./media/Hind Mere Jind.mp3'],
     html5: false,
     //onplay: function(){togglePlayicon();},
@@ -40,7 +41,7 @@ function n(n){
 function formatDuration(s){
     var min = parseInt(s/60),
     sec = n(parseInt(s-min*60));
-    if(min===NaN||sec===NaN){
+    if(sec===NaN||sec<1){
         return '00:00';
     }
     return min+":"+sec;
@@ -97,7 +98,7 @@ function togglePlayicon(){
         $('#play-icon').toggleClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
 }
 $(document).ready(function() {
-    
+    popPlaylist();
     $('#play').bind('click', function() {
         playSound();
         //visualize();
@@ -114,6 +115,6 @@ $(document).ready(function() {
       
     });
     seekPlay();
-    setInterval(popPlaylist(),1000);
+    popPlaylist();
     visualize2();
 });
