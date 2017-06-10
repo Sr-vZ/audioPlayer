@@ -61,3 +61,20 @@ margin: 0 auto;
   width: 0px;
   border-radius: 5px
 }
+
+#viz
+{
+  position: absolute;
+  top: 200px;
+  width: 90%;
+  align-content: center;
+  z-index: 5;
+}
+#image-wrapper
+{
+  position: relative;
+  z-index: 0;
+  width:90%;
+  text-align: center;
+  height: 50%
+}

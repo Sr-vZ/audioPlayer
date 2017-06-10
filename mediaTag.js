@@ -1,7 +1,9 @@
 // Simple API - will fetch all tags 
 var jsmediatags = require("jsmediatags");
  
-jsmediatags.read("./media/Hind Mere Jind.mp3", {
+
+function getTags(filename){
+  jsmediatags.read(filename, {
   onSuccess: function(tag) {
     //console.log(tag);
     albumArt(tag.tags);
@@ -10,7 +12,7 @@ jsmediatags.read("./media/Hind Mere Jind.mp3", {
     console.log(':(', error.type, error.info);
   }
 });
-
+}
 function albumArt(tags){
     var image = tags.picture;
       if (image) {

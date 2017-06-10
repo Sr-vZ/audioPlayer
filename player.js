@@ -1,7 +1,7 @@
 var sound = new Howl({
     src: ['./media/Hind Mere Jind.mp3'],
     html5: false,
-    onplay: function(){togglePlayicon();},
+    //onplay: function(){togglePlayicon();},
     onend: function(){togglePlayicon();},
     //onstop: function(){togglePlayicon();},
     });
@@ -12,10 +12,13 @@ var refreshSeek;
 
 function playSound() {
     var playEle = document.getElementById('play');
+    getTags(sound._src);
     if (sound.playing() === false) {
         sound.play();
         //isPlaying = true;
-        $('#play-icon').toggleClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
+        //$('#play-icon').toggleClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
+        //$('#play-icon').addClass('glyphicon glyphicon-pause');
+        togglePlayicon();
         $('#duration').html(formatDuration(sound.duration()));
         refreshSeek = setInterval(seekBar, 1000);
         //$('#duration').innerHtml=sound.duration();    
@@ -23,7 +26,9 @@ function playSound() {
         sound.pause();
         //isPlaying = false;
         //$('#play-icon').toggleClass('glyphicon glyphicon-pause');
-        $('#play-icon').toggleClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
+        //$('#play-icon').addClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
+        //$('#play-icon').addClass('glyphicon glyphicon-play');
+        togglePlayicon();
         clearInterval(refreshSeek);
     }
     
@@ -35,6 +40,9 @@ function n(n){
 function formatDuration(s){
     var min = parseInt(s/60),
     sec = n(parseInt(s-min*60));
+    if(min===NaN||sec===NaN){
+        return '00:00';
+    }
     return min+":"+sec;
 }
 function seekBar() {
@@ -103,6 +111,7 @@ $(document).ready(function() {
           src:fileLoc[fileList.indexOf($td.text())],
       });
       playSound();
+      
     });
     seekPlay();
     setInterval(popPlaylist(),1000);
