@@ -98,7 +98,7 @@ function togglePlayicon(){
         $('#play-icon').toggleClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
 }
 $(document).ready(function() {
-    popPlaylist();
+    //popPlaylist();
     $('#play').bind('click', function() {
         playSound();
         //visualize();

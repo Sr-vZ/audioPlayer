@@ -36,6 +36,8 @@ margin: 0 auto;
 
 .img-wrapper {
    width: 80%;
+   display: block;
+   margin: 0 auto;
 }
 
 #custom-seekbar

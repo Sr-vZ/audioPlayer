@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Sr-vZ/audioPlayer#readme",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "chart.js": "^2.6.0",
     "d3": "^4.9.1",
     "howler": "^2.0.3",
