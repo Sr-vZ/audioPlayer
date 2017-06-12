@@ -50,12 +50,12 @@ margin: 0 auto;
   position: relative;
   width: 400px;
   border-radius: 5px;
-  box-shadow: 0 0 10px #337ab7;
+  box-shadow: 0 0 10px white;
 }
 
 #custom-seekbar span
 {
-  background-color: #337ab7;
+  background-color: white;
   position: absolute;
   top: 0;
   left: 0;
@@ -92,6 +92,6 @@ body
 {
   background: linear-gradient(to bottom,#556270,#FF6B6B) 
 }
-.glyphicon glyphicon-eject{
+#fileSelect{
   float: right;
 }
