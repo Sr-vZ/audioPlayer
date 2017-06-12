@@ -85,8 +85,13 @@ margin: 0 auto;
 #button-group
 {
   align-content: center;
+  text-align: center;
+  display: inline-block;
 }
 body
 {
-  background: linear-gradient(to bottom,#F1F2B5,#135058) 
+  background: linear-gradient(to bottom,#556270,#FF6B6B) 
+}
+.glyphicon glyphicon-eject{
+  float: right;
 }

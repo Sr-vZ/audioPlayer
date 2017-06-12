@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
   <script>
     window.$ = window.jQuery = require('jquery');
@@ -32,9 +32,9 @@
 </head>
 
 <body>
-  <div id="container-fluid">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-1 col-centered">
+      <div class="col-xs-12 col-centered">
         <div id="ui">
           <!--<audio id="audioElement" src="./media/Baarish.mp3" controls="true"></audio>-->
           <div>
@@ -59,13 +59,13 @@
             <div class="col-md-12"></div>
           </div>
           <div id="button-group" class="w-75 mx-auto text-center">
-            <button id="back" type="button " class="btn btn-primary btn-circle btn-lg"> <span id="back-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span> </button>
-            <button id="play" type="button " class="btn btn-primary btn-circle btn-xl"> <span id="play-icon" class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span> </button>
-            <button id="forward" type="button " class="btn btn-primary btn-circle btn-lg"> <span id="forward-icon" class="glyphicon glyphicon-step-forward" aria-hidden="true"></span> </button>
+            <button id="back" type="button" class="btn btn-primary btn-circle btn-lg"> <span id="back-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span> </button>
+            <button id="play" type="button" class="btn btn-primary btn-circle btn-xl"> <span id="play-icon" class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span> </button>
+            <button id="forward" type="button" class="btn btn-primary btn-circle btn-lg"> <span id="forward-icon" class="glyphicon glyphicon-step-forward" aria-hidden="true"></span> </button>
           </div>
           <div class="panel panel-default">
             <!-- Default panel contents -->
-            <div class="panel-heading">Playlist</div>
+            <div class="panel-heading">Playlist<span class="glyphicon glyphicon-eject"></span></div>
             <!-- Table -->
             <table id="playlist" class="table table-hover">
               <tbody> </tbody>
