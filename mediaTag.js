@@ -24,7 +24,7 @@ function albumArt(tags){
                 window.btoa(base64String);
         document.getElementById('album-art').setAttribute('src',base64);
       } else {
-        document.getElementById('album-art').style.display = "none";
+        document.getElementById('album-art').style.display = "album-art.png";
         console.log("failed!");
       }
     }

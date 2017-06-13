@@ -19,6 +19,8 @@ fs.readdir(dir, function(err, files) {
 	   process.exit(1);
    }
    //console.log("Listing files in Directory " + dir);
+   fileList=[];
+   fileLoc=[];
    files.forEach(function(f) {
       //console.log(f);
       fileList.push(f);

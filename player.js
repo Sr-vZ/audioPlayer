@@ -71,6 +71,7 @@ function popPlaylist(dir){
     var contents ='';
     getFiles(dir,function(){
         console.log(fileList);
+        $("#playlist tbody tr").remove();
         for(i=0;i<fileList.length;i++){
             contents ="<tr><td>"+fileList[i]+"</td></tr>";
             $('#playlist>tbody').append(contents);   
@@ -87,7 +88,7 @@ function updateAnimations() {
 function ejectButton(){
     const {dialog} = require('electron').remote;
     console.log(dialog);
-    dialog.showOpenDialog({properties:['openDirectory'], filters:[
+    dialog.showOpenDialog({properties:['opeFile','openDirectory','multiSelection'], filters:[
         {name: 'mp3',extensions:['mp3']}
         ]},function(files){
             if(files===undefined)
@@ -128,6 +129,7 @@ $(document).ready(function() {
       sound.stop();
       sound=new Howl({
           src:fileLoc[fileList.indexOf($td.text())],
+          autoplay:true
       });
       playSound();
       
