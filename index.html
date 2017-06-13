@@ -12,6 +12,8 @@
         Chart = require('chart.js'),
         moment = require('moment'),
         bootstrap =require('bootstrap'),
+        //remote = require('remote'),
+        //dialog = remote.require('dialog'),
         jsmediatags = require("jsmediatags");
   </script>
   <!-- Latest compiled and minified CSS -->
@@ -34,7 +36,7 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-centered">
+      <div class="col-xs-12 col-md-12 col-centered">
         <div id="ui">
           <!--<audio id="audioElement" src="./media/Baarish.mp3" controls="true"></audio>-->
           <div>
@@ -64,7 +66,10 @@
             <!-- Default panel contents -->
             <div class="panel-heading">
               <span> Playlist </span>
-              <span id="fileSelect"class="glyphicon glyphicon-eject"></span></div>
+              <button id="eject" class="btn btn-primary btn-circle">
+              <span id="fileSelect"class="glyphicon glyphicon-eject"></span>
+              </button>
+              </div>
             <!-- Table -->
             <table id="playlist" class="table table-hover">
               <tbody> </tbody>
