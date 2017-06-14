@@ -88,7 +88,7 @@ function updateAnimations() {
 function ejectButton(){
     const {dialog} = require('electron').remote;
     console.log(dialog);
-    dialog.showOpenDialog({properties:['opeFile','openDirectory','multiSelection'], filters:[
+    dialog.showOpenDialog({properties:['opeFile','multiSelection'], filters:[
         {name: 'mp3',extensions:['mp3']}
         ]},function(files){
             if(files===undefined)
