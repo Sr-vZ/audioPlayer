@@ -95,13 +95,8 @@ body
 #eject{
   float: right;
 }
-#playlist{
-  overflow-y: auto;
-}
-#playlistWrapper{
-  height: 200px;
-}
-tbody{
-  height: 200px;
-  overflow-y: auto;
+
+.scrolling-table{
+
+  overflow-y: scroll;
 }
