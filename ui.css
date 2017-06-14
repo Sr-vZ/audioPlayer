@@ -1,3 +1,12 @@
+.btn-circle.btn-sm {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 10px;
+  line-height: 1.428571429;
+  border-radius: 10px;
+}
 .btn-circle {
   width: 30px;
   height: 30px;
@@ -99,4 +108,24 @@ body
 .scrolling-table{
 
   overflow-y: scroll;
+}
+#title-bar {
+ -webkit-app-region: drag;
+ height: 25px;
+ background-color: black;
+ padding: none;
+ margin: 0px;
+}
+
+#title {
+ position: fixed;
+ top: 0px;
+ left: 6px;
+}
+
+#title-bar-btns {
+ -webkit-app-region: no-drag;
+  position: fixed;
+ top: 0px;
+ right: 6px;
 }
