@@ -2,7 +2,7 @@
 var sound = new Howl({
     //src: fileLoc,
     src: ['./media/Hind Mere Jind.mp3'],
-    html5: false,
+    html5: true,
     //onplay: function(){togglePlayicon();},
     onend: function(){togglePlayicon();},
     //onstop: function(){togglePlayicon();},
@@ -129,7 +129,9 @@ $(document).ready(function() {
       sound.stop();
       sound=new Howl({
           src:fileLoc[fileList.indexOf($td.text())],
-          autoplay:true
+          autoplay:true,
+          html5:true,
+          preload:true,
       });
       playSound();
       
