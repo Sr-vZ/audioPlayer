@@ -102,7 +102,7 @@ function ejectButton(){
 }
 function playPrevious(){
       var index=0;
-      index=fileList.indexOf(sound._src)-1;
+      index=fileLoc.indexOf(sound._src)-1;
       if (index<0){
           index=0;
       }
@@ -117,7 +117,7 @@ function playPrevious(){
 }
 function playNext(){
       var index=0;
-      index=fileList.indexOf(sound._src)+1;
+      index=fileLoc.indexOf(sound._src)+1;
       if (index>fileLoc.length){
           index=fileLoc.length;
       }
