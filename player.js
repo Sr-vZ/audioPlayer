@@ -88,7 +88,7 @@ function updateAnimations() {
 function ejectButton(){
     const {dialog} = require('electron').remote;
     console.log(dialog);
-    dialog.showOpenDialog({properties:['opeFile','multiSelection'], filters:[
+    dialog.showOpenDialog({properties:['openFile','openDirectory','multiSelection'], filters:[
         {name: 'mp3',extensions:['mp3']}
         ]},function(files){
             if(files===undefined)
@@ -100,7 +100,36 @@ function ejectButton(){
         });
 
 }
-
+function playPrevious(){
+      var index=0;
+      index=fileList.indexOf(sound._src)-1;
+      if (index<0){
+          index=0;
+      }
+      sound.stop();
+      sound=new Howl({
+          src:fileLoc[index],
+          autoplay:true,
+          html5:true,
+          preload:true,
+      });
+      playSound();
+}
+function playNext(){
+      var index=0;
+      index=fileList.indexOf(sound._src)+1;
+      if (index>fileLoc.length){
+          index=fileLoc.length;
+      }
+      sound.stop();
+      sound=new Howl({
+          src:fileLoc[index],
+          autoplay:true,
+          html5:true,
+          preload:true,
+      });
+      playSound();
+}
 var vid = sound;
 function seekPlay(){
 $("#custom-seekbar").on("click", function(e){
@@ -135,6 +164,12 @@ $(document).ready(function() {
       });
       playSound();
       
+    });
+    $('#forward').bind('click',function(){
+        playNext();
+    });
+    $('#back').bind('click',function(){
+        playPrevious();
     });
     $('#eject').bind('click',function(){
         ejectButton();
