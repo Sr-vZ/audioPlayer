@@ -50,7 +50,7 @@
             </div>
             -->
           <div class="row">
-            <div class="">
+            <div class="col-centered">
               <p class="col-xs-3" id="pos">0:00</p>
               <div class="col-xs-3" id="custom-seekbar"> <span></span> </div>
               <p class="col-xs-3" id="duration">0:00</p>
@@ -59,10 +59,15 @@
           
           <div class="btn-group" role="group" aria-label="...">
             <button id="back" type="button" class="btn btn-primary btn-circle btn-lg"> <span id="back-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span> </button>
-            <button id="play" type="button" class="btn btn-primary btn-circle btn-xl"> <span id="play-icon" class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span> </button>
+            <button id="play" type="button" class="btn btn-primary btn-circle btn-lg"> <span id="play-icon" class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span> </button>
             <button id="forward" type="button" class="btn btn-primary btn-circle btn-lg"> <span id="forward-icon" class="glyphicon glyphicon-step-forward" aria-hidden="true"></span> </button>
             <button id="volume" type="button" class="btn btn-primary btn-circle btn-lg"> <span id="forward-icon" class="glyphicon glyphicon-volume-down" aria-hidden="true"></span> </button>
-          </div>
+            </div>
+            <div id="vol-slider">
+            <input type="range" min="0" max="100" value="0"onchange="showValue(this.value)" />
+            <span id="range">0</span>
+            </div>
+          
           <div id="playlistWrapper" class="panel panel-default">
             <!-- Default panel contents -->
             <div class="panel-heading">

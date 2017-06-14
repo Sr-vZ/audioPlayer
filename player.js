@@ -130,6 +130,16 @@ function playNext(){
       });
       playSound();
 }
+
+function setVolume(vol){
+    sound.volume(vol/100);
+}
+function showValue(newValue)
+{
+	document.getElementById("range").innerHTML=newValue;
+    setVolume(newValue);
+}
+
 var vid = sound;
 function seekPlay(){
 $("#custom-seekbar").on("click", function(e){
@@ -174,6 +184,10 @@ $(document).ready(function() {
     $('#eject').bind('click',function(){
         ejectButton();
     });
+    $('#volume').bind('click',function(){
+        $('#vol-slider').toggle();
+    });
+    $('#vol-slider').hide();
     seekPlay();
     popPlaylist("./media");
     visualize2();
