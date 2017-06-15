@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <script src="/node_modules/jquery/dist/jquery.js"></script>
   <script>
-    window.$ = window.jQuery = require('jquery');
+    window.$ = window.jQuery = $ = require('jquery');
         var d3 = require('d3'),
+        howler
         jsdom =require('jsdom'),
         Chart = require('chart.js'),
         moment = require('moment'),
@@ -21,8 +22,8 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <!-- Latest compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.3/howler.min.js"></script>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>-->
+  <script src="./node_modules/howler/dist/howler.min.js"></script>
   <!--<script type="text/javascript" src="app.js"></script>-->
   <script type="text/javascript" src="player.js"></script>
   <script type="text/javascript" src="visualize2.js"></script>
@@ -50,7 +51,7 @@
           <!--<audio id="audioElement" src="./media/Baarish.mp3" controls="true"></audio>-->
           <div>
             <div id="img-wrapper">
-              <img id="album-art" class="img-responsive mx-auto w-50 h-50 img-fluid rounded" src="album-art.png"> </div>
+              <img id="album-art" class="center-block" src="album-art.png"> </div>
             <div id="viz"> <canvas id="visualizer"></canvas> </div>
           </div>
           <!--

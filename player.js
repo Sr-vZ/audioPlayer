@@ -2,7 +2,7 @@
 var sound = new Howl({
     //src: fileLoc,
     src: ['./media/Hind Mere Jind.mp3'],
-    html5: true,
+    html5: false,
     //onplay: function(){togglePlayicon();},
     onend: function(){togglePlayicon();},
     //onstop: function(){togglePlayicon();},
@@ -22,7 +22,7 @@ function playSound() {
         //$('#play-icon').addClass('glyphicon glyphicon-pause');
         togglePlayicon();
         $('#duration').html(formatDuration(sound.duration()));
-        refreshSeek = setInterval(seekBar, 1000);
+        refreshSeek = setInterval(seekBar, 500);
         //$('#duration').innerHtml=sound.duration();    
     } else {
         sound.pause();
@@ -88,7 +88,7 @@ function updateAnimations() {
 function ejectButton(){
     const {dialog} = require('electron').remote;
     console.log(dialog);
-    dialog.showOpenDialog({properties:['openFile','openDirectory','multiSelection'], filters:[
+    dialog.showOpenDialog({properties:['opeFile','openDirectory','multiSelection'], filters:[
         {name: 'mp3',extensions:['mp3']}
         ]},function(files){
             if(files===undefined)
@@ -99,45 +99,6 @@ function ejectButton(){
 
         });
 
-}
-function playPrevious(){
-      var index=0;
-      index=fileLoc.indexOf(sound._src)-1;
-      if (index<0){
-          index=0;
-      }
-      sound.stop();
-      sound=new Howl({
-          src:fileLoc[index],
-          autoplay:true,
-          html5:true,
-          preload:true,
-      });
-      playSound();
-}
-function playNext(){
-      var index=0;
-      index=fileLoc.indexOf(sound._src)+1;
-      if (index>fileLoc.length){
-          index=fileLoc.length;
-      }
-      sound.stop();
-      sound=new Howl({
-          src:fileLoc[index],
-          autoplay:true,
-          html5:true,
-          preload:true,
-      });
-      playSound();
-}
-
-function setVolume(vol){
-    sound.volume(vol/100);
-}
-function showValue(newValue)
-{
-	document.getElementById("range").innerHTML=newValue;
-    setVolume(newValue);
 }
 
 var vid = sound;
@@ -169,25 +130,15 @@ $(document).ready(function() {
       sound=new Howl({
           src:fileLoc[fileList.indexOf($td.text())],
           autoplay:true,
-          html5:true,
+          html5:false,
           preload:true,
       });
       playSound();
       
     });
-    $('#forward').bind('click',function(){
-        playNext();
-    });
-    $('#back').bind('click',function(){
-        playPrevious();
-    });
     $('#eject').bind('click',function(){
         ejectButton();
     });
-    $('#volume').bind('click',function(){
-        $('#vol-slider').toggle();
-    });
-    $('#vol-slider').hide();
     seekPlay();
     popPlaylist("./media");
     visualize2();
