@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
-  <script src="/node_modules/jquery/dist/jquery.js"></script>
+  <!--<script src="./node_modules/jquery/dist/jquery.js"></script>-->
   <script>
     window.$ = window.jQuery = $ = require('jquery');
         var d3 = require('d3'),
@@ -38,13 +38,13 @@
       <div id="title-bar">
           <div id="title">My Life For The Code</div>
           <div id="title-bar-btns">
-               <button type="button" class="btn btn-success btn-circle btn-sm" id="min-btn"onclick="window.minimize();"></button>
+               <button type="button" class="btn btn-success btn-circle btn-sm" id="min-btn"onclick="minimize();"></button>
                <button type="button" class="btn btn-warning btn-circle btn-sm" id="max-btn"></button>
                <button type="button" class="btn btn-danger btn-circle btn-sm" id="close-btn" onclick="window.close();"></button>
           </div>
      </div>
 
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 col-centered">
         <div id="ui">

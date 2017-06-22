@@ -108,7 +108,7 @@ body
 }
 
 .scrolling-table{
-
+  height: 100px;
   overflow-y: scroll;
 }
 #title-bar {
@@ -133,9 +133,9 @@ body
 }
 #album-art{
   border-radius: 5px;
-  height: 400px;
-  width: 400px;
-  padding: 30px;
-  box-shadow:0 0 15px white;
+  height: 300px;
+  width: 300px;
+  padding: 3px;
+  box-shadow:0 0 5px white;
 
 }
