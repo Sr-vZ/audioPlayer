@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
 .btn-circle.btn-sm {
   width: 20px;
   height: 20px;
@@ -82,6 +83,9 @@ margin: 0 auto;
   height: 150px;
   align-content: center;
   z-index: 5;
+  display: table;
+  margin: 0 auto;
+  padding: 10px
 }
 #image-wrapper
 {
@@ -124,7 +128,9 @@ body
  position: fixed;
  top: 0px;
  left: 6px;
- 
+ font-family: 'Lobster', cursive;
+ color: white;
+ vertical-align: middle;
 }
 
 #title-bar-btns {
@@ -160,7 +166,7 @@ input[type="range"]{
         linear,
         left top,
         right top,
-        color-stop(0.0, #94A14E),
+        color-stop(0.0, #23b2ff),
         color-stop(0.0, #C5C5C5)
     );
 }
@@ -173,3 +179,4 @@ input[type='range']::-webkit-slider-thumb {
     width: 15px;
     border-radius: 50%
 }
+
