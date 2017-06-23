@@ -184,3 +184,11 @@ $(document).ready(function() {
     $('#eject').bind('click',function(){
         ejectButton();
     });
+    $('#volume').bind('click',function(){
+        $('#vol-slider').toggle();
+    });
+    $('#vol-slider').hide();
+    seekPlay();
+    popPlaylist("./media");
+    visualize2();
+});
