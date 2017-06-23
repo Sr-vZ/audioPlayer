@@ -36,9 +36,9 @@
 
 <body>
       <div id="title-bar">
-          <div id="title">My Life For The Code</div>
+          <div id="title">audioPhile</div>
           <div id="title-bar-btns">
-               <button type="button" class="btn btn-success btn-circle btn-sm" id="min-btn"onclick="minimize();"></button>
+               <button type="button" class="btn btn-success btn-circle btn-sm" id="min-btn"onclick="window.blur();"></button>
                <button type="button" class="btn btn-warning btn-circle btn-sm" id="max-btn"></button>
                <button type="button" class="btn btn-danger btn-circle btn-sm" id="close-btn" onclick="window.close();"></button>
           </div>
@@ -59,15 +59,15 @@
                 <div id="progress_bar" class="progress-bar bg-info" role="progressbar" style="width:0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             -->
-          <div class="row">
+          <div id="seek" class="row">
             <div class="col-centered">
               <p class="col-xs-3" id="pos">0:00</p>
-              <div class="col-xs-3" id="custom-seekbar"> <span></span> </div>
+              <div class="col-xs-3 center" id="custom-seekbar"> <span></span> </div>
               <p class="col-xs-3" id="duration">0:00</p>
             </div>
           </div>
           
-          <div class="btn-group" role="group" aria-label="...">
+          <div id="controls" class="btn-group" role="group" aria-label="...">
             <button id="back" type="button" class="btn btn-primary btn-circle btn-lg"> <span id="back-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span> </button>
             <button id="play" type="button" class="btn btn-primary btn-circle btn-lg"> <span id="play-icon" class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span> </button>
             <button id="forward" type="button" class="btn btn-primary btn-circle btn-lg"> <span id="forward-icon" class="glyphicon glyphicon-step-forward" aria-hidden="true"></span> </button>

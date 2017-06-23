@@ -100,6 +100,20 @@ function ejectButton(){
         });
 
 }
+function showValue(newValue){
+	document.getElementById("range").innerHTML=newValue;
+    sound.volume=(newValue/100);
+    $('input[type="range"]').change(function () {
+    var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
+    
+    $(this).css('background-image',
+                '-webkit-gradient(linear, left top, right top, '
+                + 'color-stop(' + val + ', #94A14E), '
+                + 'color-stop(' + val + ', #C5C5C5)'
+                + ')'
+                );
+});
+}
 
 var vid = sound;
 function seekPlay(){
