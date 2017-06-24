@@ -109,6 +109,9 @@ body
   background: linear-gradient(to bottom,#556270,#FF6B6B) 
 }
 #eject{
+  
+  display: table-cell;
+  vertical-align: middle;
   float: right;
 }
 
@@ -179,5 +182,9 @@ input[type='range']::-webkit-slider-thumb {
     height: 15px;
     width: 15px;
     border-radius: 50%
+}
+.panel-heading{
+  display: table;
+  width:100%;
 }
 
