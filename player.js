@@ -100,6 +100,19 @@ function ejectButton(){
         });
 
 }
+function showValue(ele){
+	document.getElementById("range").innerHTML=ele.value;
+    sound.volume(ele.value/100);
+    var val = ($(ele).val() - $(ele).attr('min')) / ($(ele).attr('max') - $(ele).attr('min'));
+    
+    $(ele).css('background-image',
+                '-webkit-gradient(linear, left top, right top, '
+                + 'color-stop(' + val + ', #94A14E), '
+                + 'color-stop(' + val + ', #C5C5C5)'
+                + ')'
+                );
+
+}
 
 var vid = sound;
 function seekPlay(){
