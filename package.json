@@ -20,6 +20,7 @@
     "bootstrap": "^3.3.7",
     "chart.js": "^2.6.0",
     "d3": "^4.9.1",
+    "electron-packager": "^8.7.2",
     "howler": "^2.0.3",
     "jquery": "^3.2.1",
     "jsdom": "^11.0.0",

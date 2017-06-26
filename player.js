@@ -1,4 +1,5 @@
 //const {dialog} = require('electron').remote;
+/*
 var sound = new Howl({
     //src: fileLoc,
     src: ['./media/Hind Mere Jind.mp3'],
@@ -7,12 +8,18 @@ var sound = new Howl({
     onend: function(){togglePlayicon();},
     //onstop: function(){togglePlayicon();},
     });
-
+*/
+var sound;
 var isPlaying = false;
 
 var refreshSeek;
 
 function playSound() {
+    if (fileLoc.length>0 && sound.playing()===false){
+        sound = new Howl({
+            src: fileLoc[0]
+        })
+    }
     var playEle = document.getElementById('play');
     getTags(sound._src);
     if (sound.playing() === false) {
@@ -33,7 +40,7 @@ function playSound() {
         togglePlayicon();
         clearInterval(refreshSeek);
     }
-    
+    visualize2();
 }
 function n(n){
     return n > 9 ? "" + n: "0" + n;
@@ -88,7 +95,7 @@ function updateAnimations() {
 function ejectButton(){
     const {dialog} = require('electron').remote;
     console.log(dialog);
-    dialog.showOpenDialog({properties:['opeFile','openDirectory','multiSelection'], filters:[
+    dialog.showOpenDialog({properties:['openFile','openDirectory','multiSelection'], filters:[
         {name: 'mp3',extensions:['mp3']}
         ]},function(files){
             if(files===undefined)
@@ -114,7 +121,7 @@ function showValue(ele){
 
 }
 
-var vid = sound;
+//var vid = sound;
 function seekPlay(){
 $("#custom-seekbar").on("click", function(e){
     var offset = $(this).offset();
@@ -155,8 +162,12 @@ $(document).ready(function() {
     $('#volume').bind('click',function(){
         $('#vol-slider').toggle();
     })
+    $('#stream').bind('click',function(){
+        $('#stream-options').toggle();
+    })
     $('#vol-slider').hide();
+    $('#stream-options').hide();
     seekPlay();
-    popPlaylist("./media");
-    visualize2();
+    //popPlaylist("./media");
+    //visualize2();
 });

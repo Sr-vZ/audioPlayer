@@ -72,12 +72,33 @@
             <button id="play" type="button" class="btn btn-primary btn-circle btn-lg"> <span id="play-icon" class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span> </button>
             <button id="forward" type="button" class="btn btn-primary btn-circle btn-lg"> <span id="forward-icon" class="glyphicon glyphicon-step-forward" aria-hidden="true"></span> </button>
             <button id="volume" type="button" class="btn btn-primary btn-circle btn-lg"> <span id="forward-icon" class="glyphicon glyphicon-volume-down" aria-hidden="true"></span> </button>
+            <button id="stream" type="button" class="btn btn-primary btn-circle btn-lg"> <span id="forward-icon" class="glyphicon glyphicon-cloud" aria-hidden="true"></span> </button>
             </div>
             <div id="vol-slider">
             <input type="range" min="0" max="100" value="0"onchange="showValue(this)" />
             <span id="range">0</span>
             </div>
-          
+            <div id="stream-options">
+              <div id="stream-buttons" aria-label="...">
+              <button type="button" class="btn btn-primary btn-circle btn-lg" data-toggle="modal" data-target="#streamModal"> <span id="back-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>>SC</button>
+              <button type="button" class="btn btn-primary btn-circle btn-lg"> <span id="back-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>>Gaana</button>
+              <button type="button" class="btn btn-primary btn-circle btn-lg"> <span id="back-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>>Savaan</button>
+              <button type="button" class="btn btn-primary btn-circle btn-lg"> <span id="back-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>>Spotify</button>
+              <button type="button" class="btn btn-primary btn-circle btn-lg"> <span id="back-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>>Last.fm</button>
+              <button type="button" class="btn btn-primary btn-circle btn-lg"> <span id="back-icon" class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>>Youtube</button>
+              </div>
+            </div>
+          <div id="streamModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Modal Header</h4>
+      </div>
+              <div class="modal-content">
+                <webview id="foo" src="https://www.soundcloud.com/" style="display:inline-flex"></webview>
+              </div>
+            </div>
+          </div>
           <div id="playlistWrapper" class="panel panel-default">
             <!-- Default panel contents -->
             <div class="panel-heading">
