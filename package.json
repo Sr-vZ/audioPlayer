@@ -4,7 +4,8 @@
   "description": "nodejs audio player prototype",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack:win": "electron-packager . \"audioPlayer\" --overwrite --out=dist/win --platform=win32 --arch=ia32 --electronVersion=1.6.2" 
   },
   "repository": {
     "type": "git",
