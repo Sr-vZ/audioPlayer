@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pack:win": "electron-packager . \"audioPlayer\" --overwrite --out=dist/win --platform=win32 --arch=ia32 --electronVersion=1.6.2" 
+    "pack:win": "electron-packager . \"audioPlayer\" --overwrite --out=dist/win --platform=win32 --arch=ia32 --electronVersion=1.6.2"
   },
   "repository": {
     "type": "git",
@@ -20,12 +20,16 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "chart.js": "^2.6.0",
+    "cheerio": "^1.0.0-rc.1",
     "d3": "^4.9.1",
     "electron-packager": "^8.7.2",
     "howler": "^2.0.3",
     "jquery": "^3.2.1",
     "jsdom": "^11.0.0",
     "jsmediatags": "^3.5.0",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "requests": "^0.2.2",
+    "selenium-webdriver": "^3.4.0",
+    "zombie": "^5.0.7"
   }
 }

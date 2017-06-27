@@ -136,6 +136,7 @@ $("#custom-seekbar").on("click", function(e){
 function togglePlayicon(){
         $('#play-icon').toggleClass('glyphicon glyphicon-pause').toggleClass('glyphicon glyphicon-play');
 }
+
 $(document).ready(function() {
     //popPlaylist();
     $('#play').bind('click', function() {

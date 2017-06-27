@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="soundcloud.css">
+  <script type="text/javascript">
+  
+  function loadsite(search){
+    var site='<object data="https://soundcloud.com/search?q='+ search.toString() + '">';
+    $("#siteloader").html(site);
+  }
+  function audioResults(){
+    var search = document.getElementById("search").value;
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', "https://soundcloud.com/search?q=" + search, false);
+	xhr.addEventListener("load", function() {
+		document.getElementById("results").innerHTML = xhr.response;
+	}, false);
+	xhr.send();
+}
+  </script>
+</head>
+<body>
+    <input type="text" id="search" placeholder="Search..">
+    <button onclick="audioResults()">Search</button>
+  
+    <p id="results"></p>
+        <div id="siteloader"></div>​
+    
+    </body>
+</html>
